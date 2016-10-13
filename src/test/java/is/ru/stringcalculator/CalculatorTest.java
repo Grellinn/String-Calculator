@@ -56,6 +56,6 @@ public class CalculatorTest {
     @Test
     public void stringWithMultipleNegativeNumbers()
     {
-        assertEquals("Negatives not allowed: -4,-5", Calculator.add("2,-4,3,-5"));
+        assertEquals("Negatives not allowed: -4,-5,", Calculator.add("2,-4,3,-5"));
     }
 }
