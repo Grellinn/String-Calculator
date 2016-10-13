@@ -10,4 +10,10 @@ public class CalculatorTest {
     {
         assertEquals(0, Calculator.add(""));
     }
+
+    @Test
+    public void oneNumber()
+    {
+        assertEquals(3, Calculator.add("3"));
+    }
 }
