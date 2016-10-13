@@ -2,7 +2,7 @@ package is.ru.stringcalculator;
 
 public class Calculator {
     
-    public static int add(String text)
+    public static String add(String text)
     {
         if (text.contains("\n"))
         {
@@ -11,17 +11,31 @@ public class Calculator {
         
         if (text.equals(""))
         {
-            return 0;
+            return "";
         }
         else if (text.contains(","))
         {
             String[] numbers = text.split(",");
+            String negativeResult = "Negatives not allowed: ";
+
+            if (text.contains("-"))
+            {
+                for (int i = 0; i < numbers.length; i = i + 1)
+                {
+                    if (numbers[i].contains("-"))
+                    {
+                        negativeResult += numbers[i] + ",";
+                    }
+                }
+
+                return negativeResult;
+            }
             
             return sumSplittedString(numbers);
         }
         else
         {
-            return toInt(text);
+            return text;
         }
     }
 
@@ -30,7 +44,7 @@ public class Calculator {
         return Integer.parseInt(text);
     }
 
-    private static int sumSplittedString(String[] numbers)
+    private static String sumSplittedString(String[] numbers)
     {
         int sum = 0;
 
@@ -39,7 +53,7 @@ public class Calculator {
             sum += toInt(numbers[i]);
         }
 
-        return sum;
+        return Integer.toString(sum);
     }
 
     private static String replaceNewLine(String text)
