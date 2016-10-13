@@ -4,6 +4,11 @@ public class Calculator {
     
     public static int add(String text)
     {
+        if (text.contains("\n"))
+        {
+            text = replaceNewLine(text);
+        }
+        
         if (text.equals(""))
         {
             return 0;
@@ -35,5 +40,12 @@ public class Calculator {
         }
 
         return sum;
+    }
+
+    private static String replaceNewLine(String text)
+    {
+        text = text.replace("\n", ",");
+
+        return text;
     }
 }
