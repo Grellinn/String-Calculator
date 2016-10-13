@@ -8,9 +8,20 @@ public class Calculator {
         {
             return 0;
         }
+        else if (text.contains(","))
+        {
+            String[] numbers = text.split(",");
+            
+            return toInt(numbers[0]) + toInt(numbers[1]);
+        }
         else
         {
-            return Integer.parseInt(text);
+            return toInt(text);
         }
+    }
+
+    private static int toInt(String text)
+    {
+        return Integer.parseInt(text);
     }
 }
