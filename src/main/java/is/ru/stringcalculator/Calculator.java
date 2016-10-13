@@ -12,7 +12,7 @@ public class Calculator {
         {
             String[] numbers = text.split(",");
             
-            return toInt(numbers[0]) + toInt(numbers[1]);
+            return sumSplittedString(numbers);
         }
         else
         {
@@ -23,5 +23,17 @@ public class Calculator {
     private static int toInt(String text)
     {
         return Integer.parseInt(text);
+    }
+
+    private static int sumSplittedString(String[] numbers)
+    {
+        int sum = 0;
+
+        for (int i = 0; i < numbers.length; i = i + 1)
+        {
+            sum += toInt(numbers[i]);
+        }
+
+        return sum;
     }
 }
