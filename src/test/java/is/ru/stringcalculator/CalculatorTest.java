@@ -22,4 +22,10 @@ public class CalculatorTest {
     {
         assertEquals(3, Calculator.add("1,2"));
     }
+
+    @Test
+    public void threeNumbers()
+    {
+        assertEquals(6, Calculator.add("1,2,3"));
+    }
 }
