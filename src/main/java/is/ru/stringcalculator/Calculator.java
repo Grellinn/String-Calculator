@@ -50,7 +50,14 @@ public class Calculator {
 
         for (int i = 0; i < numbers.length; i = i + 1)
         {
-            sum += toInt(numbers[i]);
+            if (toInt(numbers[i]) > 999)
+            {
+
+            }
+            else
+            {
+                sum += toInt(numbers[i]);
+            }
         }
 
         return Integer.toString(sum);
